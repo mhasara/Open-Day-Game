@@ -161,7 +161,7 @@
   <div class="quiz-box">
     <h2 id="progress">0 / 0</h2>
     <h3 id="quizTitle">Guess the Character</h3>
-    <h3 id="timer">Time: 15s</h3>
+    <h3 id="timer">Time: 5s</h3>
     <img id="quizImage" class="character" src="" alt="Character">
     <div class="options" id="options"></div>
   </div>
@@ -194,7 +194,7 @@
     }
 
     let selectedQuestions = shuffle([...quizData]).slice(0, 8);
-    let current = 0, score = 0, timer, timeLeft = 5;
+    let current = 0, score = 0, timer, timeLeft = 15;
 
     function loadQuestion() {
       if (current >= selectedQuestions.length) {
@@ -212,7 +212,7 @@
       document.getElementById("quizTitle").innerText = q.title;
 
       clearInterval(timer);
-      timeLeft = 5;
+      timeLeft = 15;
       document.getElementById("timer").innerText = `Time: ${timeLeft}s`;
       timer = setInterval(() => {
         timeLeft--;
